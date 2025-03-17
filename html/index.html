@@ -1,78 +1,119 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+/* Resetando margens e padding padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <title>Apresentação de Exercícios - PyScript</title>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    <script src="https://cdn.jsdelivr.net/pyodide/v0.23.4/full/pyodide.js"></script>
+main {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    padding: 30px;
+    box-sizing: border-box;
+}
 
-</head>
+/* Estilo para o título principal */
+h1 {
+    font-size: 28px;
+    color: #4CAF50;
+    margin-bottom: 15px;
+}
 
-<body>
-    <main>
-        <section class="exercicio">
-            <h1>Apresentação de Exercícios - EX004</h1>
+/* Estilo para a descrição do exercício */
+p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
 
-            <p>Conversão de Metros para centímetros e milímetros.</p>
+/* Estilo para o textarea */
+textarea {
+    width: 100%;
+    height: 150px;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
 
-            <textarea id="codigoPython">
-                a = float(input('Qual a sua altura em metros?'))
-                print(f'A sua altura é: {a}m, em centímetros: {a * 100}cm, e em Milímetros {a * 1000}mm')
-             </textarea>
-            <br>
-            <button id="executar">Executar</button>
+/* Foco no textarea */
+textarea:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
 
-            <h3>Saída:</h3>
-            <div id="output"></div>
+/* Estilo para o botão */
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-            <script>
-                async function executarCodigo() {
-                    let codigo = document.getElementById("codigoPython").value;
-                    let outputDiv = document.getElementById("output");
+button:hover {
+    background-color: #45a049;
+}
 
-                    // Inicializa o Pyodide se ainda não estiver carregado
-                    if (!window.pyodide) {
-                        outputDiv.innerText = "Carregando o interpretador Python...";
-                        window.pyodide = await loadPyodide();
-                        outputDiv.innerText = "";
-                    }
+button:active {
+    background-color: #388e3c;
+}
 
-                    try {
-                        // Redireciona a saída para capturar os prints
-                        window.pyodide.runPython(`
-    import sys
-    import io
-    sys.stdout = io.StringIO()
-    sys.stderr = io.StringIO()
-    
-    # Função para substituir input() pelo prompt() do JavaScript
-    def input(prompt_text=""):
-        import js
-        return js.prompt(prompt_text)
-                    `);
+/* Estilo para a área de saída */
+#output {
+    margin-top: 20px;
+    background: #f4f4f4;
+    padding: 15px;
+    min-height: 50px;
+    white-space: pre-wrap;
+    text-align: left;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-family: monospace;
+    font-size: 16px;
+}
 
-                        // Executa o código Python
-                        window.pyodide.runPython(codigo);
+/* Estilos responsivos para dispositivos móveis */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+        padding: 20px;
+    }
 
-                        // Obtém a saída do print()
-                        let resultado = window.pyodide.runPython("sys.stdout.getvalue()");
-                        outputDiv.innerText = resultado;
-                    } catch (error) {
-                        outputDiv.innerText = "Erro: " + error;
-                    }
-                }
+    h1 {
+        font-size: 24px;
+    }
 
-                // Adiciona evento ao botão
-                document.getElementById("executar").addEventListener("click", executarCodigo);
-            </script>
-        </section>
+    button {
+        width: 100%;
+        padding: 14px;
+        font-size: 18px;
+    }
 
-        
-    </main>
-</body>
-
-
-</html>
+    textarea {
+        height: 120px;
+        font-size: 14px;
+    }
+}
