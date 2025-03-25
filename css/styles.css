@@ -278,3 +278,41 @@ footer h3 {
     color: #4a6bdb;
     margin-right: 10px;
 }
+body {
+    transition: background-color 0.5s, color 0.5s;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+
+.icon {
+    font-size: 2rem;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.sun {
+    opacity: 1;
+    transform: rotate(0deg);
+}
+
+.moon {
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
+body.dark .sun {
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
+body.dark .moon {
+    opacity: 1;
+    transform: rotate(0deg);
+}
