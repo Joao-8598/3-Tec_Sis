@@ -10,7 +10,7 @@ body {
 
 /* Navegação */
 .navbar {
-    background-color: #ffffff;
+    background-color: #434343;
     padding: 15px 0;
 }
 
@@ -120,7 +120,7 @@ body {
 }
 
 .project-card {
-    background-color: #cf6464;
+    background-color: #FFFFF;
     border-radius: 15px;
     padding: 30px 20px;
     height: 100%;
