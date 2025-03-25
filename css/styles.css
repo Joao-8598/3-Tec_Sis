@@ -310,6 +310,9 @@ body.dark .moon {
     transform: rotate(0deg);
 }
 /* Estilos aprimorados para o botão de tema */
+.tema {
+    height: 200px;
+}
 .theme-toggle {
     position: fixed;
     top: 20px;
