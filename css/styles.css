@@ -5,7 +5,6 @@ body {
     color: #333;
     line-height: 1.6;
     padding-top: 400px;
-    background-color: #ffffff;
 }
 
 /* Navegação */
@@ -120,7 +119,11 @@ body {
 }
 
 .project-card {
+<<<<<<< HEAD
+    background-color: #FFFFF;
+=======
     background-color: #dfdfdf;
+>>>>>>> 4993c1c3081ad678f841f04e4f982a303aac29fe
     border-radius: 15px;
     padding: 30px 20px;
     height: 100%;
