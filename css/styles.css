@@ -4,7 +4,8 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     color: #333;
     line-height: 1.6;
-    padding-top: 400px;
+    background-color: #f8f9fa;
+    padding-top: 70px; /* Adequado para a navbar */
 }
 
 /* Navegação */
