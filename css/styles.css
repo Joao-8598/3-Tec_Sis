@@ -8,6 +8,10 @@ body {
     background-color: #dedede;
 }
 
+section {
+    padding-bottom: 50px;
+}
+
 /* Navegação */
 .navbar {
     background-color: #ffffff;
