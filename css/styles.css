@@ -1,4 +1,11 @@
 /* Estilos Gerais */
+.exo-2{
+    font-family: "Exo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400px;
+    font-style: normal;
+  }
+  
 body {
     font-family: 'Poppins', sans-serif;
     color: #333;
