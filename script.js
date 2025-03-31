@@ -26,7 +26,7 @@ function toggleDarkMode() {
 }
 
 var estado = document.getElementById('estado');
-$('#onoff1').on('change', function toggleDarkMode() {
+$('#onoff').on('change', function toggleDarkMode() {
     var el = this;
     estado.innerHTML = el.checked ? 'ligado' : 'desligado';
 
