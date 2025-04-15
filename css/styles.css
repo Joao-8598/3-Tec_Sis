@@ -5,28 +5,29 @@ body {
     color: #333;
     line-height: 1.6;
     padding-top: 200px;
-    background-color: #f0e6e6;
+    background: linear-gradient(120deg, #D91DF2, #A85EF2, #6BBEF2, #35F2F2, #BFF205);
 }
 
 
 /* Navegação */
 .navbar {
-    background-color: #ffffff;
+    background-color: #652A8C;
     padding: 15px 0;
 }
 
 .navbar-brand {
-    color: #4a6bdb;
+    color: #BFF205;
     font-size: 1.4rem;
     transition: all 0.3s ease;
 }
 
 .navbar-brand:hover {
-    color: #3451b2;
+    color: #A55BA6;
     transform: scale(1.05);
 }
 
 .menu-item {
+    color: #BFF205;
     margin: 0 5px;
     font-weight: 500;
     position: relative;
@@ -34,7 +35,7 @@ body {
 }
 
 .menu-item:hover {
-    color: #4a6bdb;
+    color: #A55BA6;
 }
 
 .menu-item::after {
@@ -44,8 +45,8 @@ body {
     height: 2px;
     bottom: 0;
     left: 0;
-    background-color: #4a6bdb;
-    transition: width 0.3s ease;
+    background-color: #A55BA6;
+    transition: width 0.3s ease, widthdois 0.3s ease;
 }
 
 .menu-item:hover::after {
@@ -55,8 +56,48 @@ body {
 /* Seção Hero */
 .hero-section {
     padding: 80px 0 40px;
-    background: linear-gradient(135deg, #a492ad96 0%, #c496ff42 100%);
-    border-bottom: 1px solid #aaffa74d;
+    background: linear-gradient(120deg, #BFF205, #35F2F2);
+    border-bottom: 1px solid #BFF205;
+}
+
+/* Adicione isso ao seu arquivo CSS */
+
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all 0.4s ease-out;
+    pointer-events: none;
+}
+
+.hero-section:hover::before {
+    width: 150%;
+    height: 150%;
+    opacity: 1;
+}
+
+/* Ajuste para o modo escuro */
+body.dark .hero-section::before {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Mantenha as transições existentes */
+.hero-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
 }
 
 .profile-image-container {
@@ -121,8 +162,9 @@ body {
 }
 
 .project-card {
-    background-color: #838383;
-    border-radius: 15px;
+    background: rgb(228, 226, 226);
+    border: black;
+    border-style: ridge;
     padding: 30px 20px;
     height: 100%;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -161,8 +203,8 @@ body {
 
 /* Footer */
 footer {
-    background-color: #2d3748;
-    color: #ffffff;
+    background-color: #00E3AE;
+    color: #000000;
     padding: 50px 0 30px;
     margin-top: 60px;
 }
@@ -186,7 +228,7 @@ footer h3 {
     justify-content: center;
     width: 50px;
     height: 50px;
-    background-color: #3a4a61;
+    background-color: #000000;
     color: #ffffff;
     border-radius: 50%;
     font-size: 1.4rem;
@@ -194,7 +236,7 @@ footer h3 {
 }
 
 .social-icon:hover {
-    background-color: #4a6bdb;
+    background-color: #35F2F2;
     transform: scale(1.1);
 }
 
@@ -204,18 +246,18 @@ footer h3 {
 }
 
 .email-link a {
-    color: #a3bffa;
+    color: #000000;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .email-link a:hover {
-    color: #ffffff;
+    color: #35F2F2;
 }
 
 .copyright {
     font-size: 0.9rem;
-    color: #a3bffa;
+    color: #000000;
 }
 
 /* Responsividade */
@@ -241,7 +283,6 @@ footer h3 {
         margin-right: 0;
     }
 }
-
 
 .dicas {
     background: linear-gradient(135deg, #f0f4ff, #ffffff);
@@ -315,11 +356,6 @@ body.dark .moon {
 
 /* Botão DarkMode */
 
-.dark-mode {
-    background-color: #1a1919; /* Cor de fundo no modo noturno */
-    color: #fff; /* Cor do texto no modo noturno */
-}
-
 .onoff input.toggle {
     display: none;
 }
@@ -364,4 +400,104 @@ body.dark .moon {
 .onoff input.toggle:checked + label:after {
     left: 55%;
     box-shadow: inset 0 0 0 1px #202020, 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Modo Escuro */
+body.dark {
+    background: linear-gradient(120deg, #012E40, #025159);
+    color: #e0e0e0;
+}
+
+body.dark .navbar {
+    background-color: #012E40;
+    border-bottom: 1px solid #038C8C;
+}
+
+body.dark .navbar-brand,
+body.dark .menu-item {
+    color: #03A696;
+}
+
+body.dark .menu-item:hover {
+    color: #F28705;
+}
+
+body.dark .menu-item::after {
+    background-color: #F28705;
+}
+
+body.dark .hero-section {
+    background: linear-gradient(120deg, #025159, #038C8C);
+    border-bottom-color: #03A696;
+}
+
+body.dark .profile-info h1,
+body.dark .project-card h3 {
+    color: #e0e0e0;
+}
+
+body.dark .project-card {
+    background-color: #025159;
+    border-color: #03A696;
+    color: #e0e0e0;
+}
+
+body.dark .project-card:hover {
+    box-shadow: 0 15px 30px rgba(3, 166, 150, 0.2);
+}
+
+body.dark .card-icon {
+    color: #F28705;
+}
+
+body.dark footer {
+    background-color: #038C8C;
+    color: #e0e0e0;
+}
+
+body.dark .social-icon {
+    background-color: #03A696;
+    color: #012E40;
+}
+
+body.dark .social-icon:hover {
+    background-color: #F28705;
+}
+
+body.dark .email-link a,
+body.dark .copyright {
+    color: #e0e0e0;
+}
+
+body.dark .email-link a:hover {
+    color: #F28705;
+}
+
+body.dark .badge.bg-primary {
+    background-color: #012E40 !important;
+}
+
+body.dark .badge.bg-success {
+    background-color: #038C8C !important;
+}
+
+body.dark .badge.bg-warning {
+    background-color: #F28705 !important;
+}
+
+body.dark .btn-primary {
+    background-color: #012E40;
+    border-color: #03A696;
+}
+
+body.dark .btn-success {
+    background-color: #038C8C;
+    border-color: #03A696;
+}
+
+body.dark .btn-warning {
+    background-color: #F28705;
+    border-color: #F28705;
+    color: #012E40 !important;
 }
