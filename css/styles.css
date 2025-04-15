@@ -416,11 +416,12 @@ body.dark .navbar {
 
 body.dark .navbar-brand,
 body.dark .menu-item {
-    color: #03A696;
+    color: #F28705;
 }
 
+
 body.dark .menu-item:hover {
-    color: #F28705;
+    color: #03A696;
 }
 
 body.dark .menu-item::after {
